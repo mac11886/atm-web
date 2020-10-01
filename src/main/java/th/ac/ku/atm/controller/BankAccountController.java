@@ -22,15 +22,15 @@ public class BankAccountController {
 
     @GetMapping
     public String getBankAccount(Model model){
-        model.addAttribute("allBankaccount",bankAccountService.getBankAccounts());
+       // model.addAttribute("allBankaccount",bankAccountService.getBankAccounts());
         return "bankaccount";
     }
 
 
-    @PostMapping
-    public String registerBankAccount(@ModelAttribute BankAccount bankAccount,Model model){
-        bankAccountService.createBankAccount(bankAccount);
-        model.addAttribute("allBankaccount",bankAccountService.getBankAccounts());
-        return  "redirect:bankaccount";
-    }
+//    @PostMapping
+//    public String registerBankAccount(@ModelAttribute BankAccount bankAccount,Model model){
+//        bankAccountService.createBankAccount(bankAccount);
+//        model.addAttribute("allBankaccount",bankAccountService.getBankAccounts());
+//        return  "redirect:bankaccount";
+//    }
 }
