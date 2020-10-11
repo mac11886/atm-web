@@ -19,11 +19,6 @@ public class CustomerService {
         this.repository = repository;
     }
 
-
-
-
-
-
     public  void createCustomer(Customer customer){
         //hashpin for customer
         String hashPin = hash(customer.getPin());
@@ -31,9 +26,6 @@ public class CustomerService {
         repository.save(customer);
 
     }
-
-
-
     public Customer findCustomer(int id){
         try {
             return repository.findById(id).get();
@@ -42,7 +34,6 @@ public class CustomerService {
         }
 
     }
-
     public Customer checkPin(Customer inputCustomer){
         Customer storedCustomer = findCustomer(inputCustomer.getId());
 
@@ -52,7 +43,6 @@ public class CustomerService {
             if(BCrypt.checkpw(inputCustomer.getPin(),hashPin)){
                 return storedCustomer;
             }
-
         }
         return  null;
     }

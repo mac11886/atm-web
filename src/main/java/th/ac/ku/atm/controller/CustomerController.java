@@ -28,9 +28,6 @@ public class CustomerController {
         return "customer"; // customer.html
     }
 
-
-
-
     @PostMapping
     public String registerCustomer(@ModelAttribute Customer customer, Model model){
 
